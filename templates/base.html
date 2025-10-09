@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northwest Michigan Therapist</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+	integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4v7xO2Ry5fFvYhV+J0k5j6M6Y2x6N+Z7rZfD4+Kni2Jz+f5oA=="
+	crossorigin="anonymous"
+	referrerpolicy="no-referrer"
+/>
+
+</head>
+<body>
+
+    <!-- Banner Section -->
+ <!-- Banner Section -->
+<section class="banner">
+    <div class="banner-content">
+        <div class="banner-image">
+            <img src="{{ url_for('static', filename='images/therapist.jpg') }}" alt="Therapist">
+        </div>
+        <div class="banner-text">
+            <h1>Northwest Michigan Therapy Group</h1>
+            <p>Telehealth Counseling & Therapy for Anyone in Michigan</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Navbar will come below banner -->
+<!-- Navbar Section -->
+<nav class="navbar">
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+             <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<!------------Hero Section------------------>
+ <section id="hero" class="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Healing Starts Here</h1>
+      <p>Take the first step toward a brighter tomorrow with our compassionate therapy services.</p>
+      <a href="#services" class="btn-primary">Learn More</a>
+    </div>
+  </div>
+</section>
+<!------------Hero Section END------------------>
+
+    <!------------Reasons section------------------>
+  <section id="importance" class="importance parallax">
+  <div class="container">
+    <h2>Why Therapy is Important</h2>
+      <div class="importance-cards">
+
+      <div class="importance-card">
+        <h3>Emotional Well-Being</h3>
+        <p>Therapy provides a safe space to process emotions, reduce stress, and build resilience for mental wellness.
+       <br> It’s a journey inward. Through compassionate guidance and reflection, individuals learn to navigate life’s challenges, strengthen self-awareness, and cultivate tools for lasting emotional balance. Whether you're healing from past wounds or simply seeking clarity, therapy empowers you to show up for yourself with honesty, courage, and care.</p>
+      </div>
+
+      <div class="importance-card">
+        <h3>Healthy Relationships</h3>
+        <p>Through counseling, individuals and families improve communication, resolve conflicts, and foster deeper connections.
+        <br> Strong, healthy relationships are the foundation of emotional well-being. Therapy provides a safe space to explore communication patterns, resolve conflicts, and build deeper connections. By learning healthy boundaries and emotional awareness, you can strengthen bonds with partners, family, and friends — creating relationships rooted in respect, trust, and genuine understanding.</p>
+      </div>
+
+      <div class="importance-card">
+        <h3>Personal Growth</h3>
+        <p>Therapy helps people gain self-awareness, overcome limiting beliefs, and achieve goals for a more fulfilling life.
+        <br>Therapy isn’t only about healing, it’s also about growth. It allows you to understand yourself more deeply, break free from limiting beliefs, and develop healthier ways of thinking and behaving. With the right support, you can unlock your potential, achieve meaningful goals, and live a more balanced, fulfilling life.</p>
+      </div>
+    </div>
+      <div class="cta-button-container">
+	<a href="#contact" class="btn-book-session">Book a Session</a>
+</div>
+
+  </div>
+</section>
+
+<!------------Reason Section End------------------>
+<!------------About Section---------------------->
+    <section id="about" class="about-section parallax">
+  <div class="about-container">
+
+    <!-- Left side: Image + Name -->
+    <div class="about-left">
+      <img src="../static/images/therapist.jpg" alt="Therapist Photo" class="about-photo">
+      <h3 class="therapist-name">Alison R. Hester, LPC LMFT</h3>
+      <p class="therapist-edu">
+  I have a Master of Science in Marriage and Family Therapy from Northwestern University in 2014 and have been practicing for over 11 years.
+</p>
+    </div>
+
+    <!-- Right side: About text -->
+    <div class="about-right">
+      <h2>About Me</h2>
+      <p>
+        Welcome to Northwest Michigan Therapist. I provide compassionate telehealth counseling and therapy services to clients throughout Michigan.
+      </p>
+      <p>
+        My mission is to support your mental health through video or phone sessions, wherever you are. I create a therapeutic environment based on collaboration, skill-building, action-oriented interventions, and supportive feedback.
+      </p>
+      <p>
+        Every person has a unique story. I will listen and support your growth, resilience, and self-awareness throughout therapy.
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-------------------About section end-------------->
+    <!---------------Services start--------------->
+    <section id="services" class="services-timeline">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="timeline">
+
+      <!-- Telehealth -->
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <img src="../static/images/undraw_tele.png" alt="Telehealth Counseling">
+          <h3>Telehealth Counseling</h3>
+          <p>Convenient online sessions via secure video call so you can receive care from home.</p>
+        </div>
+      </div>
+
+      <!-- Individual Therapy -->
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <img src="../static/images/individual.jpg" alt="Individual Therapy">
+          <h3>Individual Therapy</h3>
+          <p>One-on-one therapy designed to help you overcome challenges and grow personally.</p>
+        </div>
+      </div>
+
+      <!-- Couples Counseling -->
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <img src="../static/images/couple-therapy.jpg" alt="Couples Counseling">
+          <h3>Couples Counseling</h3>
+          <p>Helping couples build stronger communication, trust, and emotional connection.</p>
+        </div>
+      </div>
+
+      <!-- Family Therapy -->
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <img src="../static/images/undraw_family.png" alt="Family Therapy">
+          <h3>Family Therapy</h3>
+          <p>Guiding families to resolve conflicts, strengthen bonds, and create harmony.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--------------------services end----------------->
+
+<!-----------------------Contact section----------->
+<section id="contact" class="contact-section">
+	<div class="container">
+		<h2>Contact Me</h2>
+		<p>Let’s connect — I’m here to listen and help you on your journey.</p>
+
+		<form action="/submit_contact" method="POST" class="contact-form">
+			<div class="form-group">
+				<input type="text" name="name" placeholder="Your Name" required>
+			</div>
+
+			<div class="form-group">
+				<input type="email" name="email" placeholder="Your Email" required>
+			</div>
+
+			<div class="form-group">
+				<input type="text" name="subject" placeholder="Subject" required>
+			</div>
+
+			<div class="form-group">
+				<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+			</div>
+
+			<button type="submit" class="btn">Send Message</button>
+		</form>
+	</div>
+</section>
+
+<!--------------------Contact section end--------------->
+<!--------------------Footer Start ------------------>
+ <footer class="footer">
+	<div class="container">
+		<div class="footer-content">
+			<div class="footer-info">
+				<h3>Northwest Michigan Therapy Group</h3>
+				<p>Email: <a href="alison@thrive-wc.com">alison@thrive-wc.com</a></p>
+				<p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+			</div>
+
+			<div class="footer-socials">
+				<div class="footer-socials">
+	<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+	<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+	<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+</div>
+
+			</div>
+		</div>
+
+		<p class="footer-bottom">© 2025 Northwest Michigan Therapist. All Rights Reserved.</p>
+	</div>
+</footer>
+
+<!---------------------Footer End------------------>
+    {% block content %}{% endblock %}
+
+</body>
+</html>
