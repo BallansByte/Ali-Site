@@ -276,6 +276,10 @@ section:first-of-type {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+body{
+    margin: 0;
+    padding: 0;
+}
   .importance h2 {
     font-size: 2rem;
   }
@@ -424,80 +428,93 @@ section:first-of-type {
 
 /* ===== Services Timeline Section ===== */
 .services-timeline {
-  background: linear-gradient(135deg, #fdfbfb, #ebedee); /* soft gradient */
-  padding: 80px 10%;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee); /* Soft gradient */
+  padding: 80px 8%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 .services-timeline h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
   color: #333;
+  position: relative;
+  z-index: 2;
 }
 
-/* Timeline wrapper */
+/* Timeline Wrapper */
 .timeline {
   position: relative;
-  max-width: 900px;
-  margin: auto;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-/* Vertical line */
+/* Central Vertical Line */
 .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 6px;
-  background-color: #c7b3d9; /* mauve accent */
+  background-color: #c7b3d9; /* Mauve accent */
   top: 0;
   bottom: 0;
   left: 50%;
-  margin-left: -3px;
+  transform: translateX(-50%);
+  border-radius: 3px;
 }
 
-/* Each timeline item */
+/* Timeline Item Base */
 .timeline-item {
   padding: 20px 40px;
   position: relative;
   width: 50%;
+  box-sizing: border-box;
 }
 
-/* Left & right positioning */
+/* Left & Right Positioning */
 .timeline-item.left {
-  left: -2%;
+  left: 0;
+  text-align: right;
 }
 
 .timeline-item.right {
-  left: 45%;
+  left: 50%;
+  text-align: left;
 }
 
-/* Content box */
+/* Content Box */
 .timeline-content {
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
-/* Hover lift */
+/* Hover Interaction */
 .timeline-content:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
 }
 
-/* Image styling */
+/* Image Styling */
 .timeline-content img {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
   border-radius: 20px;
   margin-bottom: 15px;
+  object-fit: cover;
 }
 
-/* Title and text */
+/* Text Styling */
 .timeline-content h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #222;
   margin-bottom: 10px;
 }
@@ -505,11 +522,42 @@ section:first-of-type {
 .timeline-content p {
   font-size: 1rem;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* Responsive stacking on smaller screens */
-@media screen and (max-width: 768px) {
+/* Connector dots */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #c7b3d9;
+  border: 4px solid #fff;
+  top: 25px;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 0 4px rgba(199, 179, 217, 0.3);
+}
+
+.timeline-item.left::before {
+  right: -13px;
+}
+
+.timeline-item.right::before {
+  left: -13px;
+}
+
+/* Space adjustments for symmetry */
+.timeline-item.left .timeline-content {
+  margin-right: 60px;
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: 60px;
+}
+
+/* 🔹 Responsive Behavior */
+@media screen and (max-width: 992px) {
   .timeline::after {
     left: 20px;
   }
@@ -517,23 +565,42 @@ section:first-of-type {
   .timeline-item {
     width: 100%;
     padding-left: 60px;
-    padding-right: 25px;
+    padding-right: 20px;
+    text-align: left;
+  }
+
+  .timeline-item::before {
+    left: 10px;
+  }
+
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content {
+    margin: 0 0 40px 40px;
   }
 
   .timeline-item.right {
-    left: 0%;
+    left: 0;
   }
 }
-/* Adjust left side cards so they don’t touch the vertical line */
-.timeline-item.left .timeline-content {
-  margin-right: 40px; /* pushes content away from the line */
-      margin-right: 60px;
+
+@media screen and (max-width: 600px) {
+  .services-timeline h2 {
+    font-size: 2rem;
+  }
+
+  .timeline-content {
+    padding: 25px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem;
+  }
 }
 
-/* Adjust right side cards too for symmetry */
-.timeline-item.right .timeline-content {
-  margin-left: 40px; /* pushes content away from the line */
-}
 
    .contact-section {
 	padding: 5rem 0;
