@@ -601,22 +601,25 @@ body{
   }
 }
 
-
+/*-----------Contact Section------------------*/
    .contact-section {
-	padding: 5rem 0;
+	padding: 5rem 8%;
 	background: #f6f7f8;
 	text-align: center;
+	box-sizing: border-box;
 
 	h2 {
-		font-size: 2rem;
-		margin-bottom: 0.5rem;
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
 		color: #2e2e2e;
+		font-weight: 700;
 	}
 
 	p {
-		font-size: 1rem;
+		font-size: 1.1rem;
 		color: #666;
-		margin-bottom: 2.5rem;
+		margin-bottom: 3rem;
+		line-height: 1.6;
 	}
 
 	.contact-form {
@@ -625,22 +628,34 @@ body{
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
+		box-sizing: border-box;
 
 		.form-group {
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+
 			input,
 			textarea {
-				width: 100%;
+				width: 95%;
 				padding: 1rem;
 				border: 1px solid #ccc;
 				border-radius: 8px;
 				font-size: 1rem;
+				font-family: inherit;
+				background-color: #fff;
 				transition: all 0.3s ease;
+				resize: none;
 
 				&:focus {
 					border-color: #7d8cff;
 					outline: none;
 					box-shadow: 0 0 5px rgba(125, 140, 255, 0.3);
 				}
+			}
+
+			textarea {
+				min-height: 150px;
 			}
 		}
 
@@ -651,15 +666,61 @@ body{
 			border: none;
 			border-radius: 8px;
 			cursor: pointer;
-			font-size: 1rem;
-			transition: background 0.3s ease;
+			font-size: 1.1rem;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+			transition: background 0.3s ease, transform 0.2s ease;
 
 			&:hover {
 				background-color: #6a78e6;
+				transform: translateY(-3px);
+			}
+
+			&:active {
+				transform: scale(0.98);
+			}
+		}
+	}
+
+	/* ✅ Success & Error messages (for better UX) */
+	.form-message {
+		margin-top: 1rem;
+		font-size: 1rem;
+		font-weight: 500;
+
+		&.success {
+			color: #2ecc71;
+		}
+
+		&.error {
+			color: #e74c3c;
+		}
+	}
+
+	/* 📱 Responsive adjustments */
+	@media (max-width: 768px) {
+		padding: 4rem 5%;
+
+		h2 {
+			font-size: 2rem;
+		}
+
+		p {
+			font-size: 1rem;
+			margin-bottom: 2rem;
+		}
+
+		.contact-form {
+			gap: 1.2rem;
+
+			.btn {
+				font-size: 1rem;
+				padding: 0.9rem;
 			}
 		}
 	}
 }
+
 
 .thank-you-section {
 	padding: 6rem 0;
@@ -698,20 +759,30 @@ body{
 	color: #fff;
 	padding: 40px 0;
 	font-size: 0.95rem;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 .footer .container {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 20px;
+	box-sizing: border-box;
 }
 
 .footer-content {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	flex-wrap: wrap;
-	align-items: center;
+	align-items: flex-start;
+	gap: 30px;
 	margin-bottom: 20px;
+	text-align: left;
+}
+
+.footer-info {
+	flex: 1 1 250px;
+	min-width: 200px;
 }
 
 .footer-info h3 {
@@ -723,6 +794,9 @@ body{
 .footer-info a {
 	color: #ccc;
 	text-decoration: none;
+	display: inline-block;
+	margin-bottom: 6px;
+	transition: color 0.3s ease;
 }
 
 .footer-info a:hover {
@@ -733,8 +807,21 @@ body{
 	text-align: center;
 	font-size: 0.9rem;
 	color: #bbb;
-	margin-top: 15px;
+	margin-top: 10spx;
 	border-top: 1px solid #555;
-	padding-top: 10px;
+	padding-top: 15px;
+}
+
+/* 🌐 Responsive Fixes */
+@media (max-width: 768px) {
+	.footer-content {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.footer-info {
+		margin-bottom: 20px;
+	}
 }
 
