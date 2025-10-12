@@ -135,7 +135,7 @@ section:first-of-type {
 .hero-overlay {
   background: rgba(0, 0, 0, 0.5); /* dark overlay */
   width: 100%;
-  height: 100%;
+  height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,32 +175,42 @@ section:first-of-type {
 }
 /********************Importance************/
 .importance {
-  padding: 10px 40px;
-
+  padding: 60px 20px; /* Balanced spacing for all screen sizes */
   text-align: center;
-  margin-bottom: 1px;
-  width: 100vw;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevents horizontal scroll */
 }
-.container{
-    width: 100%;
+
+.container {
+  max-width: 1200px; /* Keeps layout centered and neat */
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
+
 .importance h2 {
   font-size: 2.5rem;
   margin-bottom: 60px;
   color: #333;
 }
 
+/* Flex layout for cards */
 .importance-cards {
   display: flex;
   justify-content: center;
+  align-items: stretch;
   gap: 30px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
+/* Each card */
 .importance-card {
   flex: 1 1 300px;
   max-width: 350px;
-  min-height: 450px; /* 👈 makes cards taller vertically */
+  min-height: 450px;
   padding: 40px 30px;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -209,26 +219,27 @@ section:first-of-type {
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #333;
   transition: transform 0.3s ease;
+  box-sizing: border-box;
 }
-/* Individual backgrounds using nth-child */
+
+/* Individual backgrounds */
 .importance-card:nth-child(1) {
   background: linear-gradient(135deg, rgba(173, 216, 230, 0.6), rgba(255, 255, 255, 0.4));
-  backdrop-filter: blur(10px);
 }
 
 .importance-card:nth-child(2) {
   background: linear-gradient(135deg, rgba(255, 182, 193, 0.6), rgba(255, 255, 255, 0.4));
-  backdrop-filter: blur(10px);
 }
 
 .importance-card:nth-child(3) {
   background: linear-gradient(135deg, rgba(144, 238, 144, 0.6), rgba(255, 255, 255, 0.4));
-  backdrop-filter: blur(10px);
 }
+
 .importance-card:hover {
   transform: translateY(-10px);
 }
 
+/* Text inside cards */
 .importance-card h3 {
   font-size: 1.6rem;
   margin-bottom: 20px;
@@ -236,47 +247,103 @@ section:first-of-type {
 }
 
 .importance-card p {
-  font-size: 1.10rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: black;
 }
+
+/* CTA button */
 .cta-button-container {
-	text-align: center;
-	margin-top: 2rem;
+  text-align: center;
+  margin-top: 3rem;
 }
 
 .btn-book-session {
-	display: inline-block;
-	background-color: #4e8cff; /* You can adjust to your brand color */
-	color: #fff;
-	padding: 0.9rem 2rem;
-	border-radius: 30px;
-	text-decoration: none;
-	font-weight: 600;
-	transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  background-color: #4e8cff;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-book-session:hover {
-	background-color: #3c6ed8;
-	transform: translateY(-3px);
+  background-color: #3c6ed8;
+  transform: translateY(-3px);
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .importance h2 {
+    font-size: 2rem;
+  }
+
+  .importance-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .importance-cards {
+    gap: 20px;
+  }
+}
+
 
 /* ===== About Section Styling ===== */
 .about-section {
   background-color: #E0B0FF; /* Mauve background - symbolizes wealth & calm */
-  padding: 40px 10%;
+  padding: 60px 8%;
   width: 100%;
-  height:400px;
+  min-height: 500px; /* allows flexibility instead of fixed height */
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
 }
 
+/* Parallax Background */
+.about-section.parallax {
+  background-image: url("/static/images/sky.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 120px 8%;
+}
+
+/* Overlay */
+.about-section.parallax::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.about-section.parallax > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Layout Container */
 .about-container {
-  display: flex; /* Two-column layout */
-  align-items: flex-start; /* Align items at the top */
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 50px; /* Space between image and text */
+  gap: 60px;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* Left Column - Image + Name */
+/* Left Column */
 .about-left {
   text-align: center;
   max-width: 250px;
@@ -285,80 +352,75 @@ section:first-of-type {
 .about-photo {
   width: 220px;
   height: auto;
-  border-radius: 12px; /* Soft rounded edges */
-  margin-bottom: 20px; /* Space below image */
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.15); /* Professional depth */
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
 }
 
 .therapist-name {
   font-size: 1.4rem;
   font-weight: bold;
   margin: 10px 0 5px;
-  color: #ffffff; /* Neutral professional tone */
+  color: #fff;
 }
 
 .therapist-edu {
   font-size: 1rem;
-  color: #fffff;
-  line-height: 1.6; /* Better readability for longer text */
+  color: #f8f8f8;
+  line-height: 1.6;
   margin-top: 8px;
 }
 
-
-/* Right Column - About Text */
+/* Right Column */
 .about-right {
   max-width: 600px;
-  color: #ffffff;
+  color: #fff;
+  text-align: left;
 }
 
 .about-right h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #ffffff; /* Deep mauve-purple for headline */
+  color: #fff;
 }
 
 .about-right p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 15px;
-  color: #ffffff;
-}
-/* 🌿 Parallax Effect Base */
-.parallax {
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-	z-index: 0;
 }
 
-/* Optional overlay to darken the background slightly */
-.parallax::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.3); /* Adjust the opacity if needed */
-	z-index: 1;
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-right {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .about-photo {
+    width: 180px;
+  }
+
+  .about-section.parallax {
+    padding: 100px 5%;
+    background-attachment: scroll; /* better for mobile performance */
+  }
 }
 
-/* Ensures text sits above the overlay */
-.parallax > * {
-	position: relative;
-	z-index: 2;
-}
+@media (max-width: 600px) {
+  .about-right h2 {
+    font-size: 1.7rem;
+  }
 
-/* Specific About Section Background */
-.about-section.parallax {
-	background-image: url("/static/images/sky.jpg");
-	color: white; /* makes text readable */
-	padding: 120px 0; /* gives breathing space */
-	text-align: center;
+  .about-right p {
+    font-size: 1rem;
+  }
 }
-
 
 /* ===== Services Timeline Section ===== */
 .services-timeline {
@@ -609,287 +671,3 @@ section:first-of-type {
 	padding-top: 10px;
 }
 
-/* Footer End */
-/* ============================================= */
-/* ✅ GLOBAL RESPONSIVE STYLING FOR ALL SECTIONS */
-/* ============================================= */
-
-/* ===== Base Text & Layout Adjustments ===== */
-@media (max-width: 1024px) {
-  body {
-    font-size: 95%;
-  }
-  h1, h2, h3 {
-    line-height: 1.3;
-  }
-}
-
-/* ===== Navbar ===== */
-@media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 0.8rem;
-    text-align: center;
-  }
-
-  .nav-links li a {
-    font-size: 1.1rem;
-  }
-}
-
-/* ===== Hero Section ===== */
-@media (max-width: 768px) {
-  .hero {
-    height: auto;
-    padding: 80px 20px;
-    background-position: center top;
-  }
-
-  .hero-content h1 {
-    font-size: 2.3rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-
-  .btn-primary {
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
-}
-
-/* ===== Banner Section ===== */
-@media (max-width: 768px) {
-  .banner {
-    flex-direction: column;
-    height: auto;
-    padding: 50px 20px;
-  }
-
-  .banner-content {
-    max-width: 100%;
-  }
-
-  .banner-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .banner-text p {
-    font-size: 1rem;
-  }
-
-  .banner-image img {
-    max-width: 160px;
-    margin-top: 1rem;
-  }
-}
-
-/* ===== Importance Section ===== */
-@media (max-width: 1024px) {
-  .importance {
-    padding: 60px 20px;
-  }
-
-  .importance h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-
-  .importance-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .importance-card {
-    max-width: 90%;
-    min-height: auto;
-    margin-bottom: 20px;
-    padding: 30px 20px;
-  }
-
-  .importance-card h3 {
-    font-size: 1.4rem;
-  }
-
-  .importance-card p {
-    font-size: 1rem;
-  }
-
-  .btn-book-session {
-    padding: 0.8rem 1.8rem;
-    font-size: 1rem;
-  }
-}
-
-/* ===== About Section ===== */
-@media (max-width: 1024px) {
-  .about-section {
-    height: auto;
-    padding: 60px 8%;
-  }
-
-  .about-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .about-left {
-    max-width: 100%;
-  }
-
-  .about-photo {
-    width: 180px;
-  }
-
-  .about-right {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .about-right h2 {
-    font-size: 1.8rem;
-  }
-
-  .about-right p {
-    font-size: 1rem;
-  }
-}
-
-/* ===== Services Timeline ===== */
-@media (max-width: 768px) {
-  .services-timeline {
-    padding: 60px 5%;
-  }
-
-  .timeline::after {
-    left: 10px;
-  }
-
-  .timeline-item {
-    width: 100%;
-    padding: 20px 0 20px 40px;
-  }
-
-  .timeline-content {
-    margin: 10px 0;
-  }
-
-  .timeline-content img {
-    width: 100%;
-    height: auto;
-  }
-
-  .timeline-content h3 {
-    font-size: 1.2rem;
-  }
-
-  .timeline-content p {
-    font-size: 0.95rem;
-  }
-}
-
-/* ===== Contact Section ===== */
-@media (max-width: 768px) {
-  .contact-section {
-    padding: 3rem 1rem;
-  }
-
-  .contact-section h2 {
-    font-size: 1.8rem;
-  }
-
-  .contact-section p {
-    font-size: 0.95rem;
-  }
-
-  .contact-form {
-    width: 100%;
-    gap: 1rem;
-  }
-
-  .contact-form .btn {
-    font-size: 1rem;
-    padding: 0.8rem;
-  }
-}
-
-/* ===== Thank You Section ===== */
-@media (max-width: 768px) {
-  .thank-you-section {
-    padding: 4rem 1rem;
-  }
-
-  .thank-you-section h1 {
-    font-size: 1.8rem;
-  }
-
-  .thank-you-section p {
-    font-size: 1rem;
-  }
-
-  .thank-you-section .btn {
-    padding: 0.8rem 1.5rem;
-  }
-}
-
-/* ===== Footer ===== */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .footer-info h3 {
-    font-size: 1rem;
-  }
-
-  .footer-bottom {
-    font-size: 0.8rem;
-  }
-}
-
-/* ===== Small Devices (≤480px) ===== */
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 1.9rem;
-  }
-
-  .hero-content p {
-    font-size: 0.9rem;
-  }
-
-  .importance-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .importance-card p {
-    font-size: 0.9rem;
-  }
-
-  .about-right h2 {
-    font-size: 1.5rem;
-  }
-
-  .about-right p {
-    font-size: 0.95rem;
-  }
-
-  .contact-section h2 {
-    font-size: 1.5rem;
-  }
-
-  .contact-section p {
-    font-size: 0.9rem;
-  }
-}
