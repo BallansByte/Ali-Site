@@ -18,8 +18,8 @@ db.init_app(app)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'alison@thrive-wc.com'        # replace with your Gmail
-app.config['MAIL_PASSWORD'] = 'tjadqlqzkqyhkdwv'     # Gmail App Password (not your normal one)
+app.config['MAIL_USERNAME'] = 'alisonrhesterlpc@gmail.com'        # replace with your Gmail
+app.config['MAIL_PASSWORD'] = 'bkrqtwusstcmmnui'     # Gmail App Password (not your normal one)
 app.config['MAIL_DEFAULT_SENDER'] = app.config['MAIL_USERNAME']
 
 mail = Mail(app)
@@ -64,7 +64,7 @@ def submit_contact():
 	mail_msg = MailMessage(
 		subject=f'New Contact Form Submission: {subject}',
 		sender=app.config['MAIL_USERNAME'],
-		recipients=['maballans@gmail.com']
+		recipients=['alison@thrive-wc.com']
 	)
 	mail_msg.body = f"Name: {name}\nEmail: {email}\nSubject: {subject}\nMessage:\n{message}"
 	mail.send(mail_msg)
