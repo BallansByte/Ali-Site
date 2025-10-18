@@ -64,7 +64,7 @@ def submit_contact():
 	mail_msg = MailMessage(
 		subject=f'New Contact Form Submission: {subject}',
 		sender=app.config['MAIL_USERNAME'],
-		recipients=['alison@thrive-wc.com']
+		recipients=['maballans@gmail.com']
 	)
 	mail_msg.body = f"Name: {name}\nEmail: {email}\nSubject: {subject}\nMessage:\n{message}"
 	mail.send(mail_msg)
