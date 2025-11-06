@@ -494,12 +494,14 @@ body{
   font-size: 1.5rem;
   color: #222;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .timeline-content p {
   font-size: 1rem;
   color: #555;
   line-height: 1.7;
+  text-align: center;
 }
 
 /* Connector dots */
@@ -536,7 +538,7 @@ body{
 /* 🔹 Responsive Behavior */
 @media screen and (max-width: 992px) {
   .timeline::after {
-    left: 20px;
+    left: 10px;
   }
 
   .timeline-item {
@@ -547,7 +549,7 @@ body{
   }
 
   .timeline-item::before {
-    left: 10px;
+    left: 8px;
   }
 
   .timeline-item.left .timeline-content,
