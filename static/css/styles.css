@@ -48,6 +48,7 @@ section:first-of-type {
 .banner-content {
     text-align: center;
     max-width: 800px;
+    margin-bottom: 100px;
 }
 
 .banner-text h1 {
