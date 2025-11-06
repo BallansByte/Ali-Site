@@ -34,13 +34,14 @@ section:first-of-type {
 }
 
 .banner {
-  height: 50vh; /* full viewport height */
+  height: 100vh; /* full viewport height */
   background: url("../images/banner-bg.jpg") no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
+  margin-bottom: -170px;
 }
 
 
@@ -549,7 +550,7 @@ body{
   }
 
   .timeline-item::before {
-    left: 8px;
+    left: 0px;
   }
 
   .timeline-item.left .timeline-content,
