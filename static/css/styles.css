@@ -102,7 +102,7 @@ section:first-of-type {
 
 .hero {
   height: 100vh; /* full viewport */
-  background: url("../images/therapy.jpg") no-repeat center center/cover;
+  background: url("../images/beach.jpg") no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
